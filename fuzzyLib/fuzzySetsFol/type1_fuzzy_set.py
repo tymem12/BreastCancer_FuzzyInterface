@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Callable, NoReturn, Iterable, Sequence, AnyStr, Tuple
+from typing import Callable, NoReturn, Iterable, Sequence, AnyStr
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -54,7 +54,7 @@ class Type1FuzzySet(FuzzySet):
         self.__membership_function = np.vectorize(membership_function)
         
 
-    def __call__(self, x: float or Iterable[float]) -> float or np.ndarray:
+    def __call__(self, x: float or Iterable[float]) -> float or np.ndarray: # type: ignore
         """
         Calculate the membership degree of an element to a type I fuzzy set.
 
@@ -84,7 +84,7 @@ class Type1FuzzySet(FuzzySet):
             raise ValueError('Membership function must be callable')
         self.__membership_function = new_membership_function
 
-    def __parse_anystr(self, item: AnyStr or Sequence[AnyStr]) -> str:
+    def __parse_anystr(self, item: AnyStr or Sequence[AnyStr]) -> str: # type: ignore
         """
         return item if it is a string. If it is an sequence of string, return first one"""
         if isinstance(item, Sequence) and not isinstance(item, str):
