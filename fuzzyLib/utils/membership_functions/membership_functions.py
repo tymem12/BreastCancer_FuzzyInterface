@@ -29,8 +29,8 @@ def gaussian(mean: float, sigma: float, max_value: float = 1) -> partial:
       >>> membership_value = gaussian_mf(0.5)
     """
 
-    def output_mf(value: float) -> float:
-        return max_value * np.exp(-(((mean - value) ** 2) / (2 * sigma ** 2)))
+    # def output_mf(value: float) -> float:
+    #     return max_value * np.exp(-(((mean - value) ** 2) / (2 * sigma ** 2)))
 
     return partial(__gaussian, mean=mean, sigma=sigma, max_value=max_value)
 
