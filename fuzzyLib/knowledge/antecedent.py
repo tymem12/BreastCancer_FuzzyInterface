@@ -10,6 +10,8 @@ class Antecedent(ABC):
     """
     Base class for representing an antecedent:
     https://en.wikipedia.org/wiki/Fuzzy_set
+    It is the abstract class that represent the method of how the activation of the interface would be callculated.
+    It is used for creating term that represent the actual "everythin what is before implication symbol"
     """
     def __init__(self, algebra: Algebra):
         if not isinstance(algebra, Algebra):
